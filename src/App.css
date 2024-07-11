@@ -1,0 +1,245 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* Variables */
+:root{
+  --header-hieght: 3rem;
+
+  /* Colors */
+  /* Mode HSL (Hue, Saturation, Lightness)*/
+  --hue: 0;
+  --sat: 0%;
+  --title-color: hsl(335, 84%, 55%);
+  --title-color-dark: hsl(var(--hue), var(--sat), 0%);
+  --text-color: hsl(222, 8%, 60%);
+  --body-color: hsl(var(--hue), var(--sat), 98%);
+  --container-color: #fff;
+
+  --secondary-color: hsl(335, 84%, 55%);
+  --blur-grey: #323743;
+  /* Shadow */
+  --shadow-black-10: rgba(0, 0, 0, 0.10);
+  --shadow-black-20: rgba(0, 0, 0, 0.20);
+  --shadow-black-40: rgba(0, 0, 0, 0.40);
+  --shadow-black-60: rgba(0, 0, 0, 0.60);
+  --shadow-black-70: rgba(0, 0, 0, 0.70);
+
+  /* Font & Typography */
+  --body-font: "Poppins", sans-serif;
+
+  /* 0.5rem = 8px | 1rem = 16px */
+  --big-font-size: 3.5rem;
+  --h1-font-size: 2.25rem;
+  --h2-font-size: 1.5rem;
+  --h3-font-size: 1.25rem;
+  --normal-font-size: 1rem;
+  --small-font-size: 0.875rem;
+  --smaller-font-size: 0.813rem;
+  --tiny-font-size: 0.725rem;
+
+  /* Font Weight */
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+  --font-bold: 800;
+  --font-bolder: 1000;
+
+  /* Margin Bottom */
+  --mb-0-25: 0.25rem;
+  --mb-0-5: 0.5rem;
+  --mb-0-75: 0.75rem;
+  --mb-1: 1rem;
+  --mb-1-5: 1.5rem;
+  --mb-2: 2rem;
+  --mb-2-5: 2.5rem;
+  --mb-3: 3rem;
+
+  /* Z-Index */
+  --z-tooltip: 10;
+  --z-fixed: 100;
+  --z-modal: 1000;
+
+
+  /* Responsive Typography */
+  @media screen and (max-width:992px) {
+    :root{
+      /* 0.5rem = 8px | 1rem = 16px */
+      --big-font-size: 2.75rem;
+      --h1-font-size: 1.5rem;
+      --h2-font-size: 1.25rem;
+      --h3-font-size: 1rem;
+      --normal-font-size: 0.938rem;
+      --small-font-size: 0.813rem;
+      --samller-font-size: 0.75rem;
+    }
+  }
+}
+
+/* Base */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body,
+button,
+input,
+textarea{
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+body{
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+h1, h2, h3{
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+}
+
+ul{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+button{
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+img{
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* Reusable Classes */
+.section{
+  padding: 6rem 0 2rem;
+}
+
+.section__title{
+  font-size: var(--h1-font-size);
+  color: var(--title-color);
+}
+
+.section__subtitle{
+  display: block;
+  font-size: var(--small-font-size);
+  margin-bottom: 4rem;
+}
+
+.section__title,
+.section__subtitle{
+  text-align: center;
+}
+
+/* Layout */
+.container{
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.grid{
+  display: grid;
+  gap: 1.5rem;
+}
+
+/* Buttons */
+.button{
+  display: inline-block;
+  background-color: var(--title-color);
+  color: var(--container-color);
+  padding: 0.6rem 1rem;
+  border-radius: 0.3rem;
+  font-weight: var(--font-normal);
+  border: 1.3px solid var(--title-color);
+}
+
+.button:hover{
+  background-color: var(--secondary-color);
+  color: var(--body-color);
+}
+
+.button__icon{
+  margin-left: var(--mb-0-5);
+}
+
+.button--flex{
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Breakpoints */
+/* For all large devices */
+@media screen and (max-width:992px) {
+  .container{
+    margin-left: var(--mb-1-5);
+    margin-right: var(--mb-1-5);
+  }
+
+  .button{
+    padding: 1rem 1.75rem;
+  }
+
+  .button__icon{
+    width: 22px;
+    height: 22px;
+  }
+
+}
+
+/* For medium devices */
+@media screen and (max-width:768px) {
+  body{
+    margin: 0 0 var(--header-hieght) 0;
+  }
+
+  .section{
+    padding: 6rem 0 4rem;
+  }
+
+  .section__subtitle{
+    margin-bottom: var(--mb-3);
+  }
+}
+
+@media screen and (max-width:576px) {
+  .section{
+    padding: 4rem 0 4rem;
+  }
+}
+
+/* For small devices */
+@media screen and (max-width:350px) {
+  :root{
+    --big-font-size: 2.25rem;
+    --h3-font-size: 1rem;
+  };
+
+  .section{
+    padding: 3.5rem 0 2rem 0;
+  }
+  .container{
+    margin-left: var(--mb-1);
+    margin-right: var(--mb-1);
+  }
+}

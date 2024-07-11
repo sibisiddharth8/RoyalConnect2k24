@@ -1,0 +1,46 @@
+.section__subtitle{
+  line-height: 1.8rem;
+  padding: 0 8rem;
+  margin: 1rem 0;
+  font-size: var(--font-normal);
+}
+
+/* Breakpoints */
+/* For all large devices */
+@media screen and (max-width: 992px) {
+  .container {
+    margin-left: var(--mb-1-5);
+    margin-right: var(--mb-1-5);
+  }
+
+}
+
+/* For medium devices */
+@media screen and (max-width: 768px) {
+  .about__section{
+      padding: 4rem 0;
+  }
+  .about__container{
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+  }
+  .section__subtitle{
+    padding: 0.5rem 0.6rem !important;
+  }
+}
+
+/* For small devices */
+@media screen and (max-width: 350px) {
+  :root {
+    --big-font-size: 2.25rem;
+    --h3-font-size: 1rem;
+  }
+
+  .container {
+    margin-left: var(--mb-1);
+    margin-right: var(--mb-1);
+  }
+}
